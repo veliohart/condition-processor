@@ -1,6 +1,6 @@
 {
   "name": "condition-processor",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "a small js tool that allows to apply string conditions to the give object",
   "main": "dist/index.js",
   "scripts": {
