@@ -33,7 +33,8 @@ describe('ConditionsProcessor class', () => {
     '$.drillable2 && ($.missing_product == --)',
     '($.product && !$.drillable1)',
     '!($.product && $.drillable1)',
-    '(!(!$.product && ($.drillable1)))'
+    '(!(!$.product && ($.drillable1)))',
+    '$.benchmark == some benchmark value'
   ];
 
   describe('check', () => {
@@ -137,6 +138,10 @@ describe('ConditionsProcessor class', () => {
       expect(processor.check(conditions[12], testingParams)).toEqual(
         !!!(!testingParams.product && testingParams.drillable1)
       );
+    });
+
+    it(`condition: ${conditions[13]} - should return true`, () => {
+      expect(processor.check(conditions[13], testingParams)).toEqual(testingParams.benchmark === 'some benchmark value');
     });
   });
 
